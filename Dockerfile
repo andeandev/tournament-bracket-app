@@ -9,7 +9,7 @@ RUN npm run build
 # Etapa 2: Construcción del backend
 FROM python:3.10-slim AS backend-builder
 WORKDIR /app/backend
-COPY backend/Pipfile backend/Pipfile.lock ./
+COPY backend/Pipfile ./
 RUN pip install pipenv && pipenv install --deploy --ignore-pipfile
 COPY backend/ ./
 
